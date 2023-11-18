@@ -1,0 +1,217 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.hero {
+  padding: 2%;
+  width: 65%;
+}
+
+.logo {
+  flex: 0 0 60%;
+  font-size: 20px;
+}
+
+.menu_btn {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding-inline: 20px;
+  font-size: 15px;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: thistle;
+  background-color: white;
+  font-weight: 600;
+}
+
+.menu_btn:hover,
+.hero button:hover {
+  background-color: #33393e;
+  color: white;
+  cursor: pointer;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px; /* Adjust the gap as needed */
+}
+
+.link-item {
+  padding: 5px;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.link-item:hover {
+  color: black;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #333;
+}
+
+.hero h2 {
+  font-size: 85px;
+  font-weight: 400;
+}
+
+.hero h2,
+button {
+  display: inline;
+}
+
+.hero .description {
+  display: inline-block;
+  font-size: 17px;
+  vertical-align: baseline;
+  width: 200px;
+}
+
+.hero button {
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  color: white;
+  background: #000;
+  border: 0;
+  text-transform: uppercase;
+  font-style: 800;
+  padding: 15px;
+  padding-inline: 25px;
+  border-radius: 25px;
+  vertical-align: bottom;
+}
+
+.description {
+  color: #555;
+}
+
+.description span {
+  color: #000;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 30% 40%;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.grid-item {
+  position: relative;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: white;
+  overflow: hidden;
+  height: 60vh;
+}
+
+.grid-item h4 {
+  font-size: 20px;
+  border: 2px solid;
+  width: fit-content;
+  padding: 10px;
+  padding-inline: 20px;
+  border-radius: 30px;
+  margin-bottom: auto; /* Align at the top */
+}
+
+.grid-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(0px);
+  z-index: -1;
+}
+
+/* Optionally, you can add a hover effect to remove the blur on hover */
+.grid-item:hover::before {
+  backdrop-filter: none;
+}
+
+
+
+@media (max-width: 767px) {
+  .link-grid {
+    display: none;
+  }
+  .hero {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .hero h2 {
+    font-size: 60px;
+  }
+  .hero button,
+  p,
+  h2,
+  button {
+    display: block;
+  }
+  .hero button {
+    order: +1;
+    margin-top: 20px;
+  }
+  .grid-container {
+    grid-template-columns: 1fr; /* Change to a single column in mobile view */
+  }
+ 
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Hide on tablets */
+  .link-grid {
+    display: none;
+  }
+  .hero {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .hero h2 {
+    font-size: 60px;
+    width: 70%;
+  }
+  .hero button,
+  p,
+  h2,
+  button {
+    margin: 20px;
+    display: block;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+  .hero button {
+    order: +1;
+    margin: 20px;
+  }
+}
